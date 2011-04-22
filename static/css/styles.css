@@ -104,9 +104,66 @@ input, select {
 /*
 martincleto.com Stylesheet
 v0.1
-Last Updated: 2011-04-19
+Last Updated: 2011-04-22
 Author: Santiago Martin-Cleto - http://martincleto.com
 Twitter: @martincleto
+*/
+
+/*
+@font-face {
+    font-family: "Swis721ExBTRoman";
+    font-style: normal;
+    font-weight: normal;
+    src: url("swisse.eot?#iefix") format("embedded-opentype"), url("swisse.woff") format("woff"), url("swisse.ttf") format("truetype"), url("swisse.svg#Swis721ExBTRoman") format("svg");
+}
+@font-face {
+    font-family: "Swis721BlkExBTBlack";
+    font-style: normal;
+    font-weight: normal;
+    src: url("swissek.eot?#iefix") format("embedded-opentype"), url("swissek.woff") format("woff"), url("swissek.ttf") format("truetype"), url("swissek.svg#Swis721BlkExBTBlack") format("svg");
+}
+*/
+
+@font-face {
+	font-family: "Swis721ExBTRoman";
+	src: url("../fonts/swisse.eot");
+	src: local('☺'), url("../fonts/swisse.woff") format("woff"), url("../fonts/swisse.ttf") format("truetype"), url("../fonts/swisse.svg#Swis721ExBTRoman") format("svg");
+}
+@font-face {
+	font-family: "Swis721BlkExBTBlack";
+	src: url("../fonts/swissek.eot");
+	src: local('☺'), url("../fonts/swissek.woff") format("woff"), url("../fonts/swissek.ttf") format("truetype"), url("../fonts/swissek.svg#Swis721BlkExBTBlack") format("svg");
+}
+
+@media only all{
+	@font-face {
+		font-family: "Swis721ExBTRoman";
+		src: url(//:) format('no404'), url("../fonts/swisse.woff") format('woff'), url("../fonts/swisse.ttf") format('truetype'), url("../fonts/swisse.svg#Swis721ExBTRoman") format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "Swis721BlkExBTBlack";
+		src: url(//:) format('no404'), url("../fonts/swissek.woff") format('woff'), url("../fonts/swissek.ttf") format('truetype'), url("../fonts/swissek.svg#Swis721ExBTRoman") format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+/*
+@font-face {
+	font-family: 'YanoneTagesschriftRegular';
+	src: url('yanone-webfont.eot');
+	src: local('☺'), url('yanone-webfont.woff') format('woff'), url('yanone-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@media only all{
+	@font-face {
+		font-family: 'YanoneTagesschriftRegular';
+		src: url(//:) format('no404'), url('yanone-webfont.woff') format('woff'), url('yanone-webfont.ttf') format('truetype'), url('yanone-webfont.svg#webfontXJHXQsXU') format('svg');
+		font-weight: normal;
+		font-style: normal;}
+}
 */
 
 body {
@@ -122,7 +179,7 @@ header {
 	background: -webkit-radial-gradient(20% -60%, closest-corner, #5d99d0, #1a4a81);
 	background: -webkit-gradient(radial, 20% -60%, 0, 80% 40%, 100, from(#4678b0), to(#1a4a81));
 	padding-top: 10px;
-	margin-bottom: 35px;
+	margin-bottom: 30px;
 }
 .no-cssgradients header { background-color: #1a4a81; }
 
@@ -145,21 +202,76 @@ h1 {
 }
 h2 {
 	position: absolute;
-	left: 20px;
-	bottom: -.25em;
+	left: 40px;
+	bottom: -.28em;
+	font: 3em "Swis721BlkExBTBlack", Arial, sans-serif;
 	color: #fff;
-	font-weight: bold;
-	font-size: 4em;
 }
 
 #content-top {
 	color: #6f7377;
-	font-size: 1.5em;
+	font: 1.4em "Swis721ExBTRoman", Arial, sans-serif;
 	text-align: right;
-	
+	padding-right: 50px;
+	margin-bottom: 45px;
 }
 
-nav { display: inline; }
+nav {
+	display: inline;
+	margin-left: 1.5em;
+}
+
+#gallery {
+	position: relative;
+	height: 300px;
+}
+.gallery-handler {
+	position: absolute;
+	top: 0;
+	width: 44px;
+	height: 118px;
+	background: url(../images/ui/sprite.png) no-repeat 0 0;
+	/*cursor: pointer;*/
+}
+.gallery-handler-prev { left: 0; }
+.gallery-handler-prev:hover { background-position:  0 -126px; }
+
+.gallery-handler-next { right: 0; background-position: 0 -252px;}
+.gallery-handler-next:hover { background-position:  0 -378px; }
+.gallery-items {
+	/*position: absolute;
+	left: 56px;
+	top: 0;*/
+	position: relative;
+	width: 844px;
+	min-height: 172px;
+	margin-left: 56px;
+	overflow: hidden;
+}
+.gallery-items ul {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 2882px; /* to contain 10 items, (252px + 10px + 25px)*10 */
+}
+.gallery-items ul.forward,
+.gallery-items ul.backward {
+	-webkit-transition: all 8.0s linear;
+	-moz-transition: all 8.0s linear;
+	-o-transition: all 8.0s linear;
+	-ms-transition: all 8.0s linear;	
+	transition: all 8.0s linear;
+}
+.gallery-items ul.forward { left: -2036px !important; }
+.gallery-items ul.backward { left: 0 !important; }
+.gallery-items li {
+	display: inline-block;
+	width: 252px;
+	background-color: #acafaf;
+	padding: 5px;
+	margin-left: 25px;	
+}
+.gallery-items li:first-child { margin-left: 0; }
 
 footer { border: solid 1px green; }
 

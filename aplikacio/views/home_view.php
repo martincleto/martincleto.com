@@ -28,18 +28,27 @@
 			</nav>
 		</div>
 		<div id="gallery">
-			<span id="gallery-prev" class="gallery-handler inactive"></span>
-			<ul>
-				<?php foreach($items as $item): ?>
-				<li>
-					<?php
-						//print_r($item);
-						print anchor('http://' . $item->url,$item->title);
-					?>
-				</li>
-				<?php endforeach; ?>
-			</ul>
-			<span id="gallery-next" class="gallery-handler"></span>
+			<div class="gallery-handler gallery-handler-prev"></div>
+			<div class="gallery-items">
+				<ul>
+					<?php foreach($items as $item): ?>
+					<li>
+						<?php
+							//print_r($item);
+							print anchor('http://' . $item->url,$item->title);
+						?>
+					</li>
+					<?php endforeach; ?>
+					<li><a href="#">other item 4</a></li>
+					<li><a href="#">other item 5</a></li>
+					<li><a href="#">other item 6</a></li>
+					<li><a href="#">other item 7</a></li>
+					<li><a href="#">other item 8</a></li>
+					<li><a href="#">other item 9</a></li>
+					<li><a href="#">other item 10</a></li>
+				</ul>
+			</div>
+			<div class="gallery-handler gallery-handler-next"></div>
 		</div>
 	</section>
 	<footer>
