@@ -171,6 +171,33 @@ class MY_Lang extends CI_Lang {
    		}
         return $uri;
     }
+
+	/**
+	 * Lang_switcher
+	 *
+	 * Show a switcher with alternative languages
+	 *
+	 * @access	public
+	 * @param	string	the current language
+	 * @return	string
+	 */
+	 
+	function lang_switcher($current_lang){
+		if(array_key_exists($current_lang, $this->languages)){
+			$output = '<ul>';
+			foreach ($this->languages as $language => $value){
+				if($current_lang !== $language){
+					$output .= '<li>';
+					$output .= anchor($this->switch_uri($language),lang($value));
+					$output .= '</li>';
+				}
+			}
+			$output .= '</ul>';
+			return $output;
+		}
+	}
+
+
 } 
 
 // END MY_Lang Class

@@ -18,13 +18,14 @@
 		<div class="inner-wrap">
 			<h1><?php print $title; ?></h1>
 			<h2>Santiago Martín-Cleto</h2>
+			<p><?php print $this->lang->lang_switcher($current_lang); ?></p>
 		</div>
 	</header>
 	<section id="content">
 		<div id="content-top">
 			<?php print lang('claim'); ?>
 			<nav>
-				<a href="/about">More about me</a>
+				<?php print anchor('about',lang('more_about_me')); ?>
 			</nav>
 		</div>
 		<div id="gallery">
@@ -52,8 +53,9 @@
 		</div>
 	</section>
 	<footer>
-		<p>Lang: <?php print $current_lang; ?></p>
+		<p><?php print $this->lang->lang(); ?></p>
 		<p><br />Page rendered in {elapsed_time} seconds</p>
+		
 	</footer>
 	
 	<script src="/static/js/lib/jquery-1.5.2.min.js"></script>
