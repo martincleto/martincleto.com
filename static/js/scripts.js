@@ -21,8 +21,11 @@ martincleto.slideItems = function(poHandler,poGalleryItems){
 		poGalleryItems.addClass(cMode);
 	}
 	else {
-		var iPosX = (cMode == 'forward')? -2036 : 0; 
-		poGalleryItems.animate({left: iPosX + 'px'}, 8000, 'linear');	
+		var iTargetPosX = (cMode == 'forward')? -2036 : 0;
+		var iCurrentPosX = poGalleryItems.position().left;
+		var iSpeedRatio = (8000/2036).toFixed(3); // 8000 ms estimated to slide 2036 px gallery left position
+		var iSpeed = Math.abs(iTargetPosX-iCurrentPosX) * iSpeedRatio;
+		poGalleryItems.animate({left: iTargetPosX + 'px'}, iSpeed, 'linear');	
 	}
 }
 
