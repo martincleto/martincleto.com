@@ -37,6 +37,7 @@
 						<?php
 							//print_r($item);
 							print anchor('http://' . $item->url,$item->title);
+							print_r($this->Item->get_item_tags($item->id));
 						?>
 					</li>
 					<?php endforeach; ?>
