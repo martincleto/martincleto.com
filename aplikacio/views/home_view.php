@@ -40,13 +40,6 @@
 						?>
 					</li>
 					<?php endforeach; ?>
-					<li><a href="#">other item 4</a></li>
-					<li><a href="#">other item 5</a></li>
-					<li><a href="#">other item 6</a></li>
-					<li><a href="#">other item 7</a></li>
-					<li><a href="#">other item 8</a></li>
-					<li><a href="#">other item 9</a></li>
-					<li><a href="#">other item 10</a></li>
 				</ul>
 			</div>
 			<div class="gallery-handler gallery-handler-next"></div>

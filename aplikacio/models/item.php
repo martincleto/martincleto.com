@@ -2,15 +2,18 @@
 	
 	class Item extends CI_Model {
 
-		function __construct()
-		{
+		function __construct() {
 			parent::__construct();
 		}
 		
-		function get_items()
-		{
+		function get_items() {
 			$query = $this->db->get('item');
 			return $query->result();
+		}
+		
+		function get_item_tags() {
+			
+		
 		}
 		
 	}

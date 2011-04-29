@@ -10,9 +10,10 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		// retrieve portfolio items	
-		$query = $this->db->get('item');
-		$data['items'] = $query->result();
+		$this->load->model('Item');
+		
+		// retrieve portfolio items
+		$data['items'] = $this->Item->get_items();
 		
 		// current lang
 		$data['current_lang'] = $this->lang->lang();
