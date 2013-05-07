@@ -1,13 +1,12 @@
 
-var express = require('express');
+var express = require('express')
+  , controllers = require('../app/controllers');
 
 module.exports = function (app, config) {
 	
   var auth = express.basicAuth(config.user, config.password);	
 	
-  app.get('/', function(req,res){
-    res.send('Hello');
-  });
+  app.get('/', controllers.index);
 
   app.get('/backend', auth, function(req,res){
     res.send('Backend');
