@@ -3,7 +3,7 @@
 
 Front-end developer & UI designer.
 
-This website is build using following technologies and frameworks:
+This website is built using following technologies and frameworks:
 
 * [Node](http://nodejs.org/ "node.js website")
 * [Express](http://expressjs.com/ "Node.js web application framework")
