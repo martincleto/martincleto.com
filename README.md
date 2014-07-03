@@ -5,10 +5,8 @@ Front-end developer & UI designer.
 
 This website is build using following technologies and frameworks:
 
-* Node.js (http://nodejs.org "Node.js website")
-* Express.js (http://expressjs.com "Express.js website")
-* MongoDB
-* Mongoose
-* less
-
-
+* [Node](http://nodejs.org/ "node.js website")
+* [Express](http://expressjs.com/ "Node.js web application framework")
+* [MongoDB](http://www.mongodb.org/ "NoSQL open-source document database")
+* [Mongoose](http://mongoosejs.com/ "Elegant MongoDB object modeling for node.js")
+* [SASS](http://sass-lang.com/ "CSS preprocessor") using [node-sass](https://www.npmjs.org/package/node-sass)
