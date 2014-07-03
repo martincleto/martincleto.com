@@ -3,6 +3,9 @@ html
   head
     title= title
     script(src='/vendor/angular.min.js')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    link(rel='stylesheet', href='/stylesheets/styles.css')
+  body(class=bodyClasses)
+    include includes/header
+    div.container
+      block content
+    

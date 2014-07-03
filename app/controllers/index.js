@@ -1,4 +1,8 @@
+/*
+ * app/controllers/index.js
+ * 
+ */
 
-exports.index = function(req, res){
+exports.show = function(req, res){
   res.render('index', { title: 'Express' });
 };
